@@ -1,0 +1,25 @@
+{
+  "name": "maddy-conf",
+  "displayName": "Maddy.conf",
+  "description": "Syntax highlighting for configuration files of Maddy mailserver.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "maddy.conf",
+      "aliases": ["Maddy Configuration", "maddy.conf"],
+      "extensions": [".conf"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "maddy.conf",
+      "scopeName": "source.maddy-conf",
+      "path": "./syntaxes/maddy.conf.json"
+    }]
+  }
+}
