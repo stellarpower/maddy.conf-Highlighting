@@ -1,0 +1,56 @@
+{
+	"information_for_contributors": [
+		"Forked from https://github.com/microsoft/vscode/blob/cebb5e5a055eeb35925c542db6cf39fbfb5e95d0/extensions/log/syntaxes/log.tmLanguage.json"
+	],
+	"name": "Maddy Log Output",
+	"scopeName": "source.maddy-log", 
+     "patterns": [
+
+        {
+            "match": "\\b(([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)\\.)+([a-zA-Z]{2,})\\b",
+            "name": "entity.name.domain keyword"
+        },
+        {
+            "match": "\\b([a-zA-Z0-9._%+-]+)@(([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)\\.)+([a-zA-Z]{2,})\\b",
+            "name": "entity.name.email keyword"
+        },
+
+
+        {
+            "match": "(\\[debug\\])",
+            "name": "markup.changed log.debug constant.numeric"
+        },
+        {
+            "match": "\\b([A-Z._a-z]+([/][A-Z._a-z]+)?[:])",
+            "name": "storage.type"
+        },
+
+        {
+            "match": "(ok|accepted)",
+            "name": "markup.added log.info entity.name.function"
+        },
+        {
+            "description": "Highlights ISO 8601 timestamps with separate colors.",
+            "match": "\\b(\\d{4}-\\d{2}-\\d{2})(T)(\\d{2}:\\d{2}:\\d{2}\\.\\d{3})(Z)\\b",
+            "captures": {
+                "1": { "name": "constant.numeric.date.iso8601 log.date" },  
+                "2": { "name": "keyword.separator.iso8601" },      
+                "3": { "name": "constant.numeric.time.iso8601" },  
+                "4": { "name": "keyword.separator.iso8601" }      
+            }
+        },
+
+        {
+            "match": "(error|failed|aborted)",
+            "name": "markup.deleted log.error keyword.error"
+        },
+        {
+            "include": "source.json"
+        },
+        {
+            "include": "#link-email"
+        }
+
+    ]
+	
+}
